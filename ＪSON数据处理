@@ -1,0 +1,74 @@
+JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式，采用完全独立于语言的文本格式。
+JSON是JavaScript 对象表示法（JavaScript Object Notation），这意味着在 JavaScript 中处理 JSON数据不须要任何特殊的 API 或工具包。
+JSON比ＸＭＬ更小、更快、更易解析。
+
+
+JSON 语法规则:
+JSON 语法是 JavaScript 对象表示法语法的子集。
+
+    数据在名称/值对中
+    数据由逗号分隔
+    花括号保存对象
+    方括号保存数组
+    双引号保存字符串
+
+
+JSON对象和JSON字符串之间的相互转换:
+JSON字符串:
+
+var jsonStr = '{ "name": "HGP", "sex": "man" }';
+
+JSON对象:
+
+var jsonObj = { "name": "HGP", "sex": "man" };
+
+var jsonArr=[{"name":"HGP","age":18},{"height":"183cm","dataTime":"2016-09-02"}];
+
+一、JSON字符串转换为JSON对象
+
+要运用上面的jsonStr，必须要将json字符串转化为JSON对象：
+
+var jsonObj = eval('(' + jsonStr + ')');//由JSON字符串转换为JSON对象
+
+var jsonObj = strjsonStr.parseJSON(); //由JSON字符串转换为JSON对象
+
+var jsonObj = JSON.parse(jsonStr); //由JSON字符串转换为JSON对象
+
+二、JSON对象转换为JSON字符串
+
+JQ： $.parseJSON( jsonStr ); //jQuery.parseJSON(jsonStr),可以将json字符串转换成json对象
+
+BOM：JSON.stringify(jsonObj); //可以将json对象转换成json对符串 
+
+js： obj.toJSONString(); //将JSON对象转化为JSON字符
+
+
+json对象的读取：
+
+Alert(obj.name);//输出 HGP
+
+Alert(obj.sex);// 输出 man
+
+Alert(jsonArr[0].name);// 输出 HGP
+
+特别留心：如果obj本来就是一个JSON对象，那么运用eval（）函数转换后（哪怕是多次转换）还是JSON对象，但是运用parseJSON（）函数处理后会有疑问（抛出语法异常）。
+
+JSON对象数组示例：
+var user = [
+{ "firstName":"Bill" , "lastName":"Gates" },
+{ "firstName":"George" , "lastName":"Bush" },
+{ "firstName":"Thomas" , "lastName": "Carter" }
+];
+访问user对象数组的第一项：user[0].lastName;返回内容为：Ｇates;
+修改对象数组第二项：user[1].firstName="joson";
+
+JSON字符串转对象示例：
+var txt = '{ "user" : [' +
+'{ "firstName":"Bill" , "lastName":"Gates" },' +
+'{ "firstName":"George" , "lastName":"Bush" },' +
+'{ "firstName":"Thomas" , "lastName":"Carter" } ]}';
+eval() 函数使用的是 JavaScript 编译器，可解析 JSON 文本，然后生成 JavaScript 对象。必须把文本包围在括号中，这样才能避免语法错误：
+var obj = eval ("(" + txt + ")");
+读取obj对象数据：
+var firstname=obj.user[1].firstName;
+var lastname=obj.user[1].lastNaem;
