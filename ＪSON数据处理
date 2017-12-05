@@ -30,7 +30,7 @@ var jsonArr=[{"name":"HGP","age":18},{"height":"183cm","dataTime":"2016-09-02"}]
 
 var jsonObj = eval('(' + jsonStr + ')');//由JSON字符串转换为JSON对象
 
-var jsonObj = strjsonStr.parseJSON(); //由JSON字符串转换为JSON对象
+var jsonObj = jsonStr.parseJSON(); //由JSON字符串转换为JSON对象
 
 var jsonObj = JSON.parse(jsonStr); //由JSON字符串转换为JSON对象
 
