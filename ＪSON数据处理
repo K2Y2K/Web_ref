@@ -28,11 +28,11 @@ var jsonArr=[{"name":"HGP","age":18},{"height":"183cm","dataTime":"2016-09-02"}]
 
 要运用上面的jsonStr，必须要将json字符串转化为JSON对象：
 
-var jsonObj = eval('(' + jsonStr + ')');//由JSON字符串转换为JSON对象
+var jsonobj = eval('(' + jsonStr + ')');//由JSON字符串转换为JSON对象
 
-var jsonObj = jsonStr.parseJSON(); //由JSON字符串转换为JSON对象
+var jsonobj = jsonStr.parseJSON(); //由JSON字符串转换为JSON对象
 
-var jsonObj = JSON.parse(jsonStr); //由JSON字符串转换为JSON对象
+var jsonobj = JSON.parse(jsonStr); //由JSON字符串转换为JSON对象
 
 二、JSON对象转换为JSON字符串
 
@@ -40,18 +40,18 @@ JQ： $.parseJSON( jsonStr ); //jQuery.parseJSON(jsonStr),可以将json字符串
 
 BOM：JSON.stringify(jsonObj); //可以将json对象转换成json对符串 
 
-js： obj.toJSONString(); //将JSON对象转化为JSON字符
+js： jsonObj.toJSONString(); //将JSON对象转化为JSON字符
 
 
 json对象的读取：
 
-Alert(obj.name);//输出 HGP
+Alert(jsonobj.name);//输出 HGP
 
-Alert(obj.sex);// 输出 man
+Alert(jsonobj.sex);// 输出 man
 
 Alert(jsonArr[0].name);// 输出 HGP
 
-特别留心：如果obj本来就是一个JSON对象，那么运用eval（）函数转换后（哪怕是多次转换）还是JSON对象，但是运用parseJSON（）函数处理后会有疑问（抛出语法异常）。
+特别留心：如果jsonobj本来就是一个JSON对象，那么运用eval（）函数转换后（哪怕是多次转换）还是JSON对象，但是运用parseJSON（）函数处理后会有疑问（抛出语法异常）。
 
 JSON对象数组示例：
 var user = [
