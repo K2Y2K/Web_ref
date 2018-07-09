@@ -1,0 +1,22 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+	<ribbon startFromScratch="false">
+		<tabs>
+			<tab id="TabPicsAuto"
+				label="PicsAutoTool"
+				insertAfterMso="TabDeveloper">
+				<group id="mygroupA" label="check table">
+					<button id ="BtnWrite"
+						imageMso="MacroPlay"
+						size="large"
+						label="WritePics"
+						onAction="CallWritePics"/>
+					<button id ="BtnCheck"
+						imageMso="Filter"
+						size="large"
+						label="CheckPics"
+						onAction="CallCheckPics"/>
+				</group>
+			</tab>
+		</tabs>
+	</ribbon>
+</customUI>
